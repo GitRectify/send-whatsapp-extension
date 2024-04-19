@@ -21,7 +21,7 @@ const Popup = () => {
         <li>Press right click to call a context menu</li>
         <li>Choose 'Send WhatsApp message'</li>
       </ul>
-      <hr />
+      <h3>Send to number</h3>
       <div style={{ display: 'flex', flexDirection: 'row', gap: '8px' }}>
         <input
           style={{ minWidth: '250px' }}
@@ -29,7 +29,7 @@ const Popup = () => {
           value={phoneNumber}
           onChange={changePhoneNumberHandler}
         />
-        <button onClick={sendMessageHandler}>Send message</button>
+        <button onClick={sendMessageHandler}>Send</button>
       </div>
     </>
   );
