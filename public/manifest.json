@@ -15,17 +15,6 @@
     "128": "icon_128.png",
     "256": "icon.png"
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "js/vendor.js",
-        "js/content_script.js"
-      ]
-    }
-  ],
   "background": {
     "service_worker": "js/background.js"
   },
