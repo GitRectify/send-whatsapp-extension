@@ -11,8 +11,8 @@ const parsePhoneNumber = (text?: string): string => {
   return phoneNumber;
 };
 
-const formatPhoneNumber = (phoneNumber: string, countryCode: string) => {
-  const dialCode = getCountryDialCode(countryCode);
+const formatPhoneNumber = (phoneNumber: string, countryCode?: string) => {
+  const dialCode = countryCode ? getCountryDialCode(countryCode) : null;
   if (dialCode && !phoneNumber.startsWith(dialCode)) {
     const normalizedPhoneNumber = phoneNumber.replace(/^0+/, '');  // Remove leading zeros
     return dialCode + normalizedPhoneNumber;
@@ -22,5 +22,6 @@ const formatPhoneNumber = (phoneNumber: string, countryCode: string) => {
 };
 
 export const extractPhoneNumber = (countryCode: string, maybePhoneNumber?: string): string => {
-  return formatPhoneNumber(parsePhoneNumber(maybePhoneNumber), countryCode);
+  const parsedPhoneNumber = parsePhoneNumber(maybePhoneNumber);
+  return formatPhoneNumber(parsedPhoneNumber, maybePhoneNumber?.startsWith('+') ? '' : countryCode);
 };

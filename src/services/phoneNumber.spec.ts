@@ -21,6 +21,16 @@ describe('extractPhoneNumber', () => {
     expect(result).toBe(expectedPhoneNumber);
   });
 
+  it('should disregard country code if full number is provided', () => {
+    const countryCode = 'IL';
+    const maybePhoneNumber = '+1 (555) 123-4567';
+    const expectedPhoneNumber = '15551234567';
+
+    const result = extractPhoneNumber(countryCode, maybePhoneNumber);
+
+    expect(result).toBe(expectedPhoneNumber);
+  });
+
   it('should return empty string if maybePhoneNumber is undefined', () => {
     const countryCode = 'US';
     const maybePhoneNumber = undefined;
