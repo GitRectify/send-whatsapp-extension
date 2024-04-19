@@ -12,9 +12,11 @@ const Popup = () => {
 
   return (
     <>
-      <ul style={{ minWidth: "700px" }}>
-        <li>Current URL: {currentURL}</li>
-        <li>Current Time: {new Date().toLocaleTimeString()}</li>
+      <h3>How to use</h3>
+      <ul style={{ minWidth: "500px" }}>
+        <li>Select a valid phone number</li>
+        <li>Press right click to call a context menu</li>
+        <li>Choose "Send WhatsApp message"</li>
       </ul>
     </>
   );
