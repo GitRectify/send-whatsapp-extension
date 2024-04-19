@@ -11,8 +11,8 @@
     "default_popup": "popup.html"
   },
   "icons": {
-    "48": "icon.png",
-    "128": "icon.png",
+    "48": "icon_128.png",
+    "128": "icon_128.png",
     "256": "icon.png"
   },
   "content_scripts": [
@@ -30,10 +30,6 @@
     "service_worker": "js/background.js"
   },
   "permissions": [
-    "contextMenus",
-    "activeTab"
-  ],
-  "host_permissions": [
-    "<all_urls>"
+    "contextMenus"
   ]
 }

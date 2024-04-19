@@ -8,7 +8,8 @@
     "build": "webpack --config webpack/webpack.prod.js",
     "clean": "rimraf dist",
     "test": "npx jest",
-    "style": "prettier --write \"src/**/*.{ts,tsx}\""
+    "style": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "pack": "cd dist && zip -vr send-whatsapp.zip . -x \"*.DS_Store\""
   },
   "author": "",
   "license": "MIT",
