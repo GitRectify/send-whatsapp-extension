@@ -3,7 +3,7 @@ import { countryDialCodes } from './countryCodes';
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: 'sendWhatsApp',
-    title: 'Send WhatsApp',
+    title: 'Send WhatsApp message',
     contexts: ['selection'],
   });
 });
@@ -26,7 +26,11 @@ function extractPhoneNumber(text?: string): string {
   if (!text) {
     throw new Error('No phone text provided')
   }
-  return text.replace(/\D/g, '');
+  const phoneNumber = text.replace(/\D/g, '');
+  if (phoneNumber.length === 0) {
+    throw new Error('No phone number is provided');
+  }
+  return phoneNumber;
 }
 
 function getUserCountry() {
