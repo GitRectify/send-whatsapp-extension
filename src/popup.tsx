@@ -8,7 +8,7 @@ const Popup = () => {
     const message = { action: 'sendWhatsApp', payload: phoneNumber };
 
     chrome.runtime.sendMessage(message);
-  }
+  };
   const changePhoneNumberHandler = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setPhoneNumber(ev.target.value);
   };
@@ -25,7 +25,7 @@ const Popup = () => {
       <div style={{ display: 'flex', flexDirection: 'row', gap: '8px' }}>
         <input
           style={{ minWidth: '250px' }}
-          placeholder='E.g. +1 (343) 123 441 442'
+          placeholder="E.g. +1 (343) 123 441 442"
           value={phoneNumber}
           onChange={changePhoneNumberHandler}
         />
@@ -40,5 +40,5 @@ const root = createRoot(document.getElementById('root')!);
 root.render(
   <React.StrictMode>
     <Popup />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

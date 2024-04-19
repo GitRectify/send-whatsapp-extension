@@ -26,13 +26,15 @@ chrome.runtime.onMessage.addListener((message) => {
 });
 
 function sendWhatsApp(maybePhoneNumber?: string) {
-  getUserCountry().then(countryCode => {
-    const phoneNumber = extractPhoneNumber(countryCode, maybePhoneNumber);
-    if (phoneNumber) {
-      const url = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text&type=phone_number&app_absent=0`;
-      chrome.tabs.create({ url: url });
-    }
-  }).catch(error => {
-    console.error(error.message);
-  });
+  getUserCountry()
+    .then((countryCode) => {
+      const phoneNumber = extractPhoneNumber(countryCode, maybePhoneNumber);
+      if (phoneNumber) {
+        const url = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text&type=phone_number&app_absent=0`;
+        chrome.tabs.create({ url: url });
+      }
+    })
+    .catch((error) => {
+      console.error(error.message);
+    });
 }
