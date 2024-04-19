@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Send WhatsApp",
-  "description": "Send a WhatsApp message to any selected number",
-  "version": "0.1",
+  "description": "Send a whatsapp message any number that is not in your phone book",
+  "version": "0.1.0",
   "options_ui": {
     "page": "options.html"
   },

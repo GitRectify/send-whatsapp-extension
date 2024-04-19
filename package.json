@@ -1,7 +1,7 @@
 {
   "name": "send-whatsapp",
   "version": "0.1.0",
-  "description": "Send a WhatsApp message to any selected number",
+  "description": "Send a whatsapp message any number that is not in your phone book",
   "private": true,
   "scripts": {
     "watch": "webpack --config webpack/webpack.dev.js --watch",
