@@ -1,5 +1,5 @@
-export const countryDialCodes: Record<string, string> = {
-  'US': '1',
-  'UK': '44',
-  'IL': '972',
-};
+import { codes } from 'country-calling-code';
+
+export const getCountryDialCode = (countryIsoCode: string): string | undefined => {
+  return codes.find(({ isoCode2 }) => countryIsoCode)?.countryCodes[0]
+} 

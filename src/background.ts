@@ -1,4 +1,4 @@
-import { countryDialCodes } from './countryCodes';
+import { getCountryDialCode } from './countryCodes';
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
@@ -41,7 +41,7 @@ function getUserCountry() {
 }
 
 function formatPhoneNumber(phoneNumber: string, countryCode: string) {
-  const dialCode = countryDialCodes[countryCode];
+  const dialCode = getCountryDialCode(countryCode);
   if (dialCode) {
     const normalizedPhoneNumber = phoneNumber.replace(/^0+/, '');  // Remove leading zeros
     return dialCode + normalizedPhoneNumber;
