@@ -2,8 +2,6 @@
 
 > Send a whatsapp message any number that is not in your phone book
 
-![demo](./media/demo.gif)
-
 Easily send WhatsApp messages right from your Chrome browser with the Quick WhatsApp Sender extension! This handy tool adds a new option to your right-click menu, allowing you to instantly send selected phone numbers via WhatsApp without the hassle of manually entering them.
 
 **Why You'll Love Quick WhatsApp Sender:**
